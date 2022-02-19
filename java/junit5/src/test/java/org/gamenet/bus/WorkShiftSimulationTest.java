@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class WorkShiftSimulationTest {
@@ -22,12 +21,16 @@ class WorkShiftSimulationTest {
             private Driver driver3;
             private WorkShiftSimulation workShiftSimulation;
 
-            @Test
-            void should_have_three_total_gossips_with_three_drivers() {
+            @BeforeEach
+            void setUp() {
                 driver1 = new Driver();
                 driver2 = new Driver();
                 driver3 = new Driver();
                 workShiftSimulation = new WorkShiftSimulation(driver1, driver2, driver3);
+            }
+
+            @Test
+            void should_have_three_total_gossips_with_three_drivers() {
                 assertThat(workShiftSimulation.getTotalGossip()).as("total gossip").containsOnly(
                         driver1.getStartingGossip(), driver2.getStartingGossip(), driver3.getStartingGossip());
             }

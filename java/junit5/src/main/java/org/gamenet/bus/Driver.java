@@ -1,13 +1,22 @@
 package org.gamenet.bus;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 
 public class Driver {
-    public Set<Gossip> getKnownGossip() {
-        return Collections.singleton(new Gossip());
+    private final Gossip MY_GOSSIP = new Gossip();
+    private final Set<Gossip> knownGossipSet = new HashSet<>();
+
+    public Driver() {
+        knownGossipSet.add(MY_GOSSIP);
     }
 
-    public void tellsGossipTo(Driver driver) {
+    public Set<Gossip> getKnownGossipSet() {
+        return Collections.unmodifiableSet(knownGossipSet);
+    }
+
+    public void isToldGossipBy(Driver driver) {
+        knownGossipSet.addAll(driver.getKnownGossipSet());
     }
 }

@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class DriverTest {
@@ -53,6 +54,11 @@ class DriverTest {
             void should_not_have_same_stop_for_route1_as_driver_for_route3() {
                 Driver anotherDriver = new Driver(ROUTE3);
                 assertThat(driver.hasSameCurrentStopAs(anotherDriver)).as("has same current stop as route3").isFalse();
+            }
+
+            @Test
+            void should_throw_exception_when_driver_is_created_without_route() {
+                assertThatThrownBy(() -> new Driver(null));
             }
         }
     }

@@ -7,8 +7,10 @@ import java.util.Set;
 public class Driver {
     private final Gossip MY_GOSSIP = new Gossip();
     private final Set<Gossip> knownGossipSet = new HashSet<>();
+    private final Route route;
 
-    public Driver() {
+    public Driver(Route route) {
+        this.route = route;
         knownGossipSet.add(MY_GOSSIP);
     }
 

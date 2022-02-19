@@ -1,10 +1,14 @@
 import java.util.Arrays;
 
 public class Route {
-    public Route(int stop) {
+    private int[] stops;
+    private int currentStopIndex = 0;
+
+    public Route(int... stops) {
+        this.stops = Arrays.copyOf(stops, stops.length);
     }
 
     public int getCurrentStop() {
-        return 1;
+        return stops[currentStopIndex];
     }
 }

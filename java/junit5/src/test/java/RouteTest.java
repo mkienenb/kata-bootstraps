@@ -26,4 +26,22 @@ public class RouteTest {
             }
         }
     }
+
+    @Nested
+    class Route_with_two_stops_of_three_and_four {
+        private Route route;
+
+        @BeforeEach
+        void setup() {
+            route = new Route(3, 4);
+        }
+
+        @Nested
+        class Is_newly_created {
+            @Test
+            void should_have_current_stop_of_three() {
+                assertThat(route.getCurrentStop()).isEqualTo(3);
+            }
+        }
+    }
 }

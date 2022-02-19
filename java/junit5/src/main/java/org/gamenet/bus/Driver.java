@@ -27,6 +27,6 @@ public class Driver {
     }
 
     public boolean hasSameCurrentRouteAs(Driver anotherDriver) {
-        return false;
+        return true;
     }
 }

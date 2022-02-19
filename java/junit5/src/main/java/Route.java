@@ -13,5 +13,6 @@ public class Route {
     }
 
     public void proceedToNextStop() {
+        currentStopIndex++;
     }
 }

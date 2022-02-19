@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 public class RouteTest {
@@ -19,6 +20,11 @@ public class RouteTest {
     @Nested
     class Route_with_one_stop_of_one {
         private Route route;
+
+        @Test
+        void should_throw_exception_when_route_is_created_without_stop() {
+            assertThatThrownBy(Route::new);
+        }
 
         @BeforeEach
         void setup() {

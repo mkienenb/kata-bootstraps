@@ -1,3 +1,5 @@
+package org.gamenet.bus;
+
 import java.util.Arrays;
 
 public class Route {

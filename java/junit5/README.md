@@ -1,36 +1,24 @@
-# Java JUnit5
+Description
 
-A minimal setup with Java, [JUnit5](https://junit.org/junit5/), [AssertJ](https://assertj.github.io/doc/) and [Mockito](https://site.mockito.org/) to get you started.
+Bus drivers like to gossip, everyone knows that. And bus drivers can gossip when they end up at the same stop. So now we are going to calculate after how many stops all the bus drivers know all the gossips. You will be given a number of bus routes that the drivers follow. Each driver starts with one gossip. Each route is appointed to 1 driver. When 2 or more drivers are at the same stop (even if it is the start), they can exchange all the gossips they know. A route looks like this: 1 2 3 4 and is repeated over the whole day like this 1 2 3 4 1 2 3 4 1 2 3 … If a driver starts and stops at the same stop then that is also repeated. All drivers take 1 minute to go from one stop to another and the gossip exchange happens instantly. All drivers drive 8 hours a day so you have a maximum of 480 minutes to get all the gossiping around.
+Input Description
 
-You can use [gradle](https://gradle.org/) or [maven](https://maven.apache.org/)
+You will receive all the driver routes. Not all drivers have a route of the same length
+Example 1:
 
-[More complicated JUnit5 setups](https://github.com/junit-team/junit5-samples)
+3 1 2 3
+3 2 3 1
+4 2 3 4 5
 
-## Setup
+Example 2:
 
-    git clone https://github.com/swkBerlin/kata-bootstraps
-    cd java/junit5
+2 1 2
+5 2 8
 
-Open as preexisting project in your favorite IDE and choose between gradle or maven nature
+Output Description
 
-## (optional) IDE Setup
+The number of stops it takes to have all drivers on board with the latest gossips. If there is even one driver who does not have all the gossips by the end of the day, the answer is never.
 
-Run `./gradlew idea` to build [idea](https://www.jetbrains.com/idea) project.
+Example 1: 5
 
-## Running Tests
-
-To execute the tests either run `./gradlew test`, `mvn test` or run the tests from the IDE you are using
-
-## Test Libraries Available from the Get-Go
-- [JUnit 5.8.2](https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.8.2)
-- [AssertJ 3.22.0](https://assertj.github.io/doc/#assertj-core-release-notes)
-- [Mockito 4.3.1](https://github.com/mockito/mockito/releases)
-
-
-## Additional Libraries
-- [Vavr](https://www.vavr.io/) a functional library for Java.
-
-
-This repo was tested with [idea](https://www.jetbrains.com/idea) [2020.3.1](https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+2020.3.1+%28203.6682.168+build%29+Release+Notes), if you encounter problems please open an issue or send a pull request.
-
-Have fun!
+Example 2: never

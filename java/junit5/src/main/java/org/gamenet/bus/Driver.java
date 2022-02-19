@@ -10,8 +10,15 @@ public class Driver {
     private final Route route;
 
     public Driver(Route route) {
+        verifyRoute(route);
         this.route = route;
         knownGossipSet.add(MY_GOSSIP);
+    }
+
+    private void verifyRoute(Route route) {
+        if (null == route) {
+            throw new NullPointerException("route");
+        }
     }
 
     public Set<Gossip> getKnownGossipSet() {

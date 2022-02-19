@@ -39,7 +39,7 @@ class DriverTest {
 
             @Test
             void should_have_two_gossip_when_told_by_another_starting_driver() {
-                Driver anotherDriver = new Driver(null);
+                Driver anotherDriver = new Driver(ROUTE2);
                 driver.isToldGossipBy(anotherDriver);
                 assertThat(driver.getKnownGossipSet()).hasSize(2);
             }

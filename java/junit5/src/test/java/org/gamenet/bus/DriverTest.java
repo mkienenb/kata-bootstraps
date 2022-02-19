@@ -30,7 +30,7 @@ class DriverTest {
         }
 
         @Nested
-        class Is_at_start_point {
+        class At_start_point {
             @Test
             void should_have_one_gossip() {
                 assertThat(driver.getKnownGossipSet()).hasSize(1);
@@ -44,13 +44,13 @@ class DriverTest {
             }
 
             @Test
-            void should_have_same_route_when_first_route_is_same_as_route2_starting_driver() {
+            void should_have_same_stop_for_route1_as_driver_for_route2() {
                 Driver anotherDriver = new Driver(ROUTE2);
                 assertThat(driver.hasSameCurrentStopAs(anotherDriver)).as("has same current stop as route2").isTrue();
             }
 
             @Test
-            void should_not_have_same_route_when_first_route_is_same_as_route3_starting_driver() {
+            void should_not_have_same_stop_for_route1_as_driver_for_route3() {
                 Driver anotherDriver = new Driver(ROUTE3);
                 assertThat(driver.hasSameCurrentStopAs(anotherDriver)).as("has same current stop as route3").isFalse();
             }

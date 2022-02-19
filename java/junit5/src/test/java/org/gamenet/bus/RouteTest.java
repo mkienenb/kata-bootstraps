@@ -26,7 +26,7 @@ public class RouteTest {
         }
 
         @Nested
-        class Is_at_start_point {
+        class At_start_point {
             @Test
             void should_have_current_stop_of_one() {
                 assertThat(route.getCurrentStop()).isEqualTo(STOP_1);
@@ -57,7 +57,7 @@ public class RouteTest {
         }
 
         @Nested
-        class Is_at_start_point {
+        class At_start_point {
             @Test
             void should_have_current_stop_of_three() {
                 assertThat(route.getCurrentStop()).isEqualTo(STOP_3);

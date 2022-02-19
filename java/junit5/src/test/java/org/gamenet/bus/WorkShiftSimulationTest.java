@@ -23,7 +23,7 @@ class WorkShiftSimulationTest {
     @Nested
     class A_work_day {
         @Nested
-        class Is_at_start_point {
+        class At_start_point {
 
             private Driver driver1;
             private Driver driver2;

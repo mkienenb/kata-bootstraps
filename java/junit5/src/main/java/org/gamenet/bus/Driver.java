@@ -19,4 +19,8 @@ public class Driver {
     public void isToldGossipBy(Driver driver) {
         knownGossipSet.addAll(driver.getKnownGossipSet());
     }
+
+    public Gossip getStartingGossip() {
+        return MY_GOSSIP;
+    }
 }

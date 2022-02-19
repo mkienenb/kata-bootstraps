@@ -7,7 +7,14 @@ public class Route {
     private int currentStopIndex = 0;
 
     public Route(Stop... stops) {
+        verifyStops(stops);
         this.stops = Arrays.copyOf(stops, stops.length);
+    }
+
+    private void verifyStops(Stop[] stops) {
+        if (0 == stops.length) {
+            throw new NullPointerException("stops");
+        }
     }
 
     public Stop getCurrentStop() {

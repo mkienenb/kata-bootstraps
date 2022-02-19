@@ -14,5 +14,8 @@ public class Route {
 
     public void proceedToNextStop() {
         currentStopIndex++;
+        if (currentStopIndex >= stops.length) {
+            currentStopIndex = 0;
+        }
     }
 }

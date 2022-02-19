@@ -57,6 +57,11 @@ class DriverTest {
             }
 
             @Test
+            void should_throw_exception_when_comparing_current_stop_with_null_driver() {
+                assertThatThrownBy(() -> driver.hasSameCurrentStopAs(null));
+            }
+
+            @Test
             void should_throw_exception_when_driver_is_created_without_route() {
                 assertThatThrownBy(() -> new Driver(null));
             }

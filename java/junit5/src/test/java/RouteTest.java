@@ -19,7 +19,7 @@ public class RouteTest {
         }
 
         @Nested
-        class Is_newly_created {
+        class Is_at_start_point {
             @Test
             void should_have_current_stop_of_one() {
                 assertThat(route.getCurrentStop()).isEqualTo(1);
@@ -37,7 +37,7 @@ public class RouteTest {
         }
 
         @Nested
-        class Is_newly_created {
+        class Is_at_start_point {
             @Test
             void should_have_current_stop_of_three() {
                 assertThat(route.getCurrentStop()).isEqualTo(3);

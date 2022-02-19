@@ -27,6 +27,9 @@ public class Driver {
     }
 
     public boolean hasSameCurrentStopAs(Driver anotherDriver) {
-        return true;
+        Stop currentStop = route.getCurrentStop();
+        Route anotherDriverRoute = anotherDriver.route;
+        Stop anotherDriverCurrentStop = anotherDriverRoute.getCurrentStop();
+        return currentStop.equals(anotherDriverCurrentStop);
     }
 }

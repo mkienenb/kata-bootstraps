@@ -7,4 +7,7 @@ public class Driver {
     public Set<Gossip> getKnownGossip() {
         return Collections.singleton(new Gossip());
     }
+
+    public void tellsGossipTo(Driver driver) {
+    }
 }

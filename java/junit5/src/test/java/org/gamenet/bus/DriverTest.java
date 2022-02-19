@@ -25,6 +25,13 @@ class DriverTest {
             void should_have_one_gossip() {
                 assertThat(driver.getKnownGossip()).hasSize(1);
             }
+
+            @Test
+            void should_have_two_gossip_when_told_by_another_starting_driver() {
+                Driver anotherDriver = new Driver();
+                anotherDriver.tellsGossipTo(driver);
+                assertThat(driver.getKnownGossip()).hasSize(2);
+            }
         }
     }
 }

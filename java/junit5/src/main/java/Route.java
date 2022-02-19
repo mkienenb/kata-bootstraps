@@ -11,4 +11,7 @@ public class Route {
     public int getCurrentStop() {
         return stops[currentStopIndex];
     }
+
+    public void proceedToNextStop() {
+    }
 }

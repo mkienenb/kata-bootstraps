@@ -43,5 +43,18 @@ public class RouteTest {
                 assertThat(route.getCurrentStop()).isEqualTo(3);
             }
         }
+
+        @Nested
+        class After_proceeding_to_next_stop {
+            @BeforeEach
+            void setup() {
+                route.proceedToNextStop();
+            }
+
+            @Test
+            void should_have_current_stop_of_four() {
+                assertThat(route.getCurrentStop()).isEqualTo(4);
+            }
+        }
     }
 }

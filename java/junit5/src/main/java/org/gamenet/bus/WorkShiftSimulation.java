@@ -7,11 +7,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class WorkDaySimulation {
+public class WorkShiftSimulation {
     private final List<Driver> driverList;
     private Set<Gossip> totalGossipSet;
 
-    public WorkDaySimulation(Driver... drivers) {
+    public WorkShiftSimulation(Driver... drivers) {
         this.driverList = Arrays.asList(drivers);
         totalGossipSet = calculateTotalGossip();
     }

@@ -25,4 +25,8 @@ public class Driver {
     public Gossip getStartingGossip() {
         return MY_GOSSIP;
     }
+
+    public boolean hasSameCurrentRouteAs(Driver anotherDriver) {
+        return false;
+    }
 }

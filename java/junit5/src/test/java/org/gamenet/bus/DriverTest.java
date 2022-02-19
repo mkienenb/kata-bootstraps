@@ -46,7 +46,13 @@ class DriverTest {
             @Test
             void should_have_same_route_when_first_route_is_same_as_route2_starting_driver() {
                 Driver anotherDriver = new Driver(ROUTE2);
-                assertThat(driver.hasSameCurrentRouteAs(anotherDriver)).isTrue();
+                assertThat(driver.hasSameCurrentStopAs(anotherDriver)).as("has same current stop as route2").isTrue();
+            }
+
+            @Test
+            void should_not_have_same_route_when_first_route_is_same_as_route3_starting_driver() {
+                Driver anotherDriver = new Driver(ROUTE3);
+                assertThat(driver.hasSameCurrentStopAs(anotherDriver)).as("has same current stop as route3").isFalse();
             }
         }
     }

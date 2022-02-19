@@ -26,7 +26,7 @@ public class Driver {
         return MY_GOSSIP;
     }
 
-    public boolean hasSameCurrentRouteAs(Driver anotherDriver) {
+    public boolean hasSameCurrentStopAs(Driver anotherDriver) {
         return true;
     }
 }

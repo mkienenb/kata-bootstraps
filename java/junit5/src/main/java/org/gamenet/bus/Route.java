@@ -3,14 +3,14 @@ package org.gamenet.bus;
 import java.util.Arrays;
 
 public class Route {
-    private int[] stops;
+    private Stop[] stops;
     private int currentStopIndex = 0;
 
-    public Route(int... stops) {
+    public Route(Stop... stops) {
         this.stops = Arrays.copyOf(stops, stops.length);
     }
 
-    public int getCurrentStop() {
+    public Stop getCurrentStop() {
         return stops[currentStopIndex];
     }
 

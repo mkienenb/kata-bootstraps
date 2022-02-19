@@ -12,20 +12,24 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 public class RouteTest {
 
+    public static final Stop STOP_1 = Stop.of(1);
+    public static final Stop STOP_3 = Stop.of(3);
+    public static final Stop STOP_4 = Stop.of(4);
+
     @Nested
     class Route_with_one_stop_of_one {
         private Route route;
 
         @BeforeEach
         void setup() {
-            route = new Route(1);
+            route = new Route(STOP_1);
         }
 
         @Nested
         class Is_at_start_point {
             @Test
             void should_have_current_stop_of_one() {
-                assertThat(route.getCurrentStop()).isEqualTo(1);
+                assertThat(route.getCurrentStop()).isEqualTo(STOP_1);
             }
         }
 
@@ -38,7 +42,7 @@ public class RouteTest {
 
             @Test
             void should_have_current_stop_of_one() {
-                assertThat(route.getCurrentStop()).isEqualTo(1);
+                assertThat(route.getCurrentStop()).isEqualTo(STOP_1);
             }
         }
     }
@@ -49,14 +53,14 @@ public class RouteTest {
 
         @BeforeEach
         void setup() {
-            route = new Route(3, 4);
+            route = new Route(STOP_3, STOP_4);
         }
 
         @Nested
         class Is_at_start_point {
             @Test
             void should_have_current_stop_of_three() {
-                assertThat(route.getCurrentStop()).isEqualTo(3);
+                assertThat(route.getCurrentStop()).isEqualTo(STOP_3);
             }
         }
 
@@ -69,7 +73,7 @@ public class RouteTest {
 
             @Test
             void should_have_current_stop_of_four() {
-                assertThat(route.getCurrentStop()).isEqualTo(4);
+                assertThat(route.getCurrentStop()).isEqualTo(STOP_4);
             }
         }
     }
